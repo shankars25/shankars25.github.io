@@ -178,6 +178,8 @@ def get_files():
 if __name__ == "__main__":
     if not os.path.exists(UPLOAD_FOLDER):
         os.makedirs(UPLOAD_FOLDER)
-    app.run(host="0.0.0.0", port=10000,)
+    port = int(os.environ.get("PORT", 10000))  # Ensure it uses Render's port
+    app.run(host="0.0.0.0", port=port)
+
 
 
